@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 174 55% 92%; /* Light Green */
+    --foreground: 222 47% 11.2%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11.2%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11.2%;
+    --primary: 181 49% 43%; /* Forest Green */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 174 40% 85%;
+    --secondary-foreground: 222 47% 11.2%;
+    --muted: 174 40% 85%;
+    --muted-foreground: 215 20.2% 45.1%;
+    --accent: 358 59% 42%; /* Brick Red */
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 174 30% 80%;
+    --input: 174 30% 80%;
+    --ring: 181 49% 43%;
+    --radius: 0.75rem;
+
+    --chart-1: 181 49% 43%;
+    --chart-2: 358 59% 42%;
+    --chart-3: 0 84.2% 60.2%;
+    --chart-4: 222 47% 11.2%;
+    --chart-5: 220 70% 50%;
+  }
+
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 11.2%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 181 49% 43%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 358 59% 42%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 181 49% 43%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .animated-gradient {
+    background-size: 300% 300%;
+    background-image:
+      radial-gradient(at 27% 37%, hsla(181, 49%, 43%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 97% 21%, hsla(174, 55%, 92%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 52% 99%, hsla(358, 59%, 42%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 10% 29%, hsla(210, 40%, 98%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 97% 96%, hsla(38, 60%, 72%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 0.1) 0px, transparent 50%),
+      radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 0.1) 0px, transparent 50%);
+    animation: AnimateBG 20s ease infinite;
+  }
+
+  @keyframes AnimateBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
